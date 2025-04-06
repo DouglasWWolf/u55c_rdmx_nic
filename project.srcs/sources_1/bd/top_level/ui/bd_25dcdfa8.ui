@@ -1,0 +1,43 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-497,-262",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port WR_AXI -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace port RD_AXI -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port port-id_resetn -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace inst axi_bram_ctrl -pg 1 -lvl 2 -x 460 -y 120 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir BRAM_PORTA right -pinY BRAM_PORTA 0R -pinDir s_axi_aclk left -pinY s_axi_aclk 60L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 80L
+preplace inst blk_mem_gen -pg 1 -lvl 3 -x 730 -y 120 -defaultsOSRD -pinDir BRAM_PORTA left -pinY BRAM_PORTA 0L -pinDir rsta_busy right -pinY rsta_busy 0R
+preplace inst axi_crossbar -pg 1 -lvl 1 -x 180 -y 60 -defaultsOSRD -pinDir S00_AXI left -pinY S00_AXI 0L -pinDir M00_AXI right -pinY M00_AXI 60R -pinDir S01_AXI left -pinY S01_AXI 20L -pinDir aclk left -pinY aclk 40L -pinDir aresetn left -pinY aresetn 60L
+preplace netloc pcie_bridge_axi_aclk 1 0 2 40J 180 N
+preplace netloc resetn_1 1 0 2 20J 200 N
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 2 1 N 120
+preplace netloc axi_crossbar_M00_AXI 1 1 1 N 120
+preplace netloc S00_AXI_1 1 0 1 N 60
+preplace netloc S01_AXI_1 1 0 1 N 80
+levelinfo -pg 1 0 180 460 730 860
+pagesize -pg 1 -db -bbox -sgen -110 0 860 260
+",
+   "No Loops_ScaleFactor":"1.0",
+   "No Loops_TopLeft":"-352,-231",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port S_AXI -pg 1 -lvl 0 -x 0 -y 50 -defaultsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x 0 -y 70 -defaultsOSRD
+preplace port port-id_resetn -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
+preplace inst axi_bram_ctrl -pg 1 -lvl 1 -x 150 -y 70 -defaultsOSRD
+preplace inst blk_mem_gen -pg 1 -lvl 2 -x 410 -y 70 -defaultsOSRD
+preplace netloc pcie_bridge_axi_aclk 1 0 1 NJ 70
+preplace netloc resetn_1 1 0 1 NJ 90
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 1 1 N 70
+preplace netloc stream_to_ram_0_M_AXI 1 0 1 NJ 50
+levelinfo -pg 1 0 150 410 540
+pagesize -pg 1 -db -bbox -sgen -100 0 540 140
+"
+}
+

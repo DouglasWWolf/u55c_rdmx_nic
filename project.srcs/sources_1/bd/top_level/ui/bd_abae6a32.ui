@@ -1,0 +1,52 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-503,-261",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port S_AXIS -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace port M_AXIS -pg 1 -lvl 3 -x 530 -y 200 -defaultsOSRD
+preplace port port-id_sys_resetn_in -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port port-id_sys_clk -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port port-id_cmac_clk -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace port port-id_cmac_resetn -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
+preplace inst tx_cdc_fifo -pg 1 -lvl 1 -x 140 -y 60 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 0L -pinDir M_AXIS right -pinY M_AXIS 60R -pinDir s_axis_aresetn left -pinY s_axis_aresetn 20L -pinDir s_axis_aclk left -pinY s_axis_aclk 40L -pinDir m_axis_aclk left -pinY m_axis_aclk 60L
+preplace inst tx_ila -pg 1 -lvl 2 -x 390 -y 300 -defaultsOSRD -pinDir SLOT_0_AXIS right -pinY SLOT_0_AXIS 0R -pinDir clk left -pinY clk 0L -pinDir resetn left -pinY resetn 20L
+preplace inst packetizing_fifo -pg 1 -lvl 2 -x 390 -y 120 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 0L -pinDir M_AXIS right -pinY M_AXIS 80R -pinDir s_axis_aresetn left -pinY s_axis_aresetn 60L -pinDir s_axis_aclk left -pinY s_axis_aclk 80L
+preplace netloc cmac_control_rx_resetn_out 1 0 2 NJ 180 NJ
+preplace netloc cmac_usplus_gt_txusrclk2 1 0 2 20 200 260
+preplace netloc sys_clk_1 1 0 1 NJ 100
+preplace netloc sys_resetn_in_1 1 0 1 NJ 80
+preplace netloc axis_tx_1 1 0 1 NJ 60
+preplace netloc tx_cdc_fifo1_M_AXIS 1 2 1 510 200n
+preplace netloc tx_cdc_fifo_M_AXIS 1 1 1 N 120
+levelinfo -pg 1 0 140 390 530
+pagesize -pg 1 -db -bbox -sgen -150 0 640 380
+",
+   "No Loops_ScaleFactor":"1.0",
+   "No Loops_TopLeft":"-506,-168",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port S_AXIS -pg 1 -lvl 0 -x 0 -y 50 -defaultsOSRD
+preplace port M_AXIS -pg 1 -lvl 3 -x 530 -y 100 -defaultsOSRD
+preplace port port-id_sys_resetn_in -pg 1 -lvl 0 -x 0 -y 70 -defaultsOSRD
+preplace port port-id_sys_clk -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
+preplace port port-id_s_axis_aclk -pg 1 -lvl 0 -x 0 -y 110 -defaultsOSRD
+preplace port port-id_s_axis_aresetn -pg 1 -lvl 0 -x 0 -y 170 -defaultsOSRD
+preplace inst tx_cdc_fifo -pg 1 -lvl 1 -x 140 -y 80 -defaultsOSRD
+preplace inst packetizer -pg 1 -lvl 2 -x 390 -y 100 -defaultsOSRD
+preplace netloc sys_resetn_in_1 1 0 1 NJ 70
+preplace netloc sys_clk_1 1 0 1 NJ 90
+preplace netloc cmac_usplus_gt_txusrclk2 1 0 2 20 180 270J
+preplace netloc cmac_control_rx_resetn_out 1 0 2 NJ 170 260J
+preplace netloc tx_cdc_fifo_M_AXIS 1 1 1 N 80
+preplace netloc axis_tx_1 1 0 1 NJ 50
+preplace netloc tx_cdc_fifo1_M_AXIS 1 2 1 N 100
+levelinfo -pg 1 0 140 390 530
+pagesize -pg 1 -db -bbox -sgen -150 0 630 190
+"
+}
+0

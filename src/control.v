@@ -33,8 +33,11 @@ module control # (parameter AW=8)
     // These indicates that "stream_to_ram" overflowed the available RAM
     input overflow_0, overflow_1,
 
-    // These indicate that the DDR banks passed initial calibration
-    input async_ddr_cal_0, async_ddr_cal_1,
+    // If this is asserted, a catastrophic temperature failure has occured
+    input async_hbm_cattrip,
+
+    // This is the temperature of the HBM RAM, in Celsius
+    input[5:0] async_hbm_temp,
 
     // This is a '1' if the QSFP port has acheived PCS alignment with the peer
     input async_pcs_aligned,
@@ -116,6 +119,7 @@ localparam REG_PCI_SIZE_H     =  8;
 localparam REG_PCI_SIZE_L     =  9;
 localparam REG_RESET          = 10;
 localparam REG_CLEAR_COUNTERS = 11;
+localparam REG_HBM_TEMP       = 12;
 
 localparam REG_XMIT_SRCADDR_H = 20;
 localparam REG_XMIT_SRCADDR_L = 21;
@@ -186,9 +190,6 @@ wire reset_out = (resetn == 0) | (reset_countdown != 0);
 // resetn_out is the active-low version of reset_out
 always @(posedge clk) resetn_out <= ~reset_out;
 
-// These bits are 1 if DDR RAM banks passed initial calibration
-wire[1:0] ddr_cal;
-
 // This is a '1' if the QSFP port has achieved PCS alignment with the peer
 wire pcs_aligned;
 
@@ -197,6 +198,15 @@ reg[31:0] pause_pci_counter;
 
 // PCI output is paused while this counter is non-zero
 assign pause_pci = (pause_pci_counter != 0);
+
+// This is the temperature of the HBM RAM, in Celsius
+wire[5:0] hbm_temp;
+
+// If this is asserted, a catastrophic temperature failure has occured
+wire hbm_cattrip;
+
+// Is the HBM temperature within the normal operating range?
+wire temp_ok = ~hbm_cattrip;
 
 //=============================================================================
 // This block records a pci_range_error when we see the strobe
@@ -377,6 +387,7 @@ always @(posedge clk) begin
             REG_PCI_SIZE_H:     ashi_rdata <= pci_size[63:32];
             REG_PCI_SIZE_L:     ashi_rdata <= pci_size[31:00];
             REG_LOOPBACK:       ashi_rdata <= loopback;
+            REG_HBM_TEMP:       ashi_rdata <= hbm_temp;
 
             REG_ERRORS:         ashi_rdata <= 
                                 {
@@ -394,7 +405,7 @@ always @(posedge clk) begin
 
             REG_STATUS:         ashi_rdata <=
                                 {
-                                    ddr_cal,
+                                    temp_ok,
                                     pcs_aligned
                                 };
 
@@ -420,9 +431,21 @@ end
 //==========================================================================
 // These synchronize various signals into our clock domain
 //==========================================================================
-cdc_single i_sync_ddr_calib_0  (async_ddr_cal_0,   clk, ddr_cal[0]);
-cdc_single i_sync_ddr_calib_1  (async_ddr_cal_1,   clk, ddr_cal[1]);
+cdc_single i_sync_hbm_cattrip  (async_hbm_cattrip, clk, hbm_cattrip);
 cdc_single i_sync_pcs_alignment(async_pcs_aligned, clk, pcs_aligned);
+
+xpm_cdc_array_single #
+(
+      .DEST_SYNC_FF(4),  
+      .SRC_INPUT_REG(0), 
+      .WIDTH(6)          
+)
+i_sync_hbm_temp
+(
+    .src_in(async_hbm_temp),
+    .dest_clk(clk),
+    .dest_out(hbm_temp)    
+);
 //==========================================================================
 
 

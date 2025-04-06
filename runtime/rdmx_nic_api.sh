@@ -24,6 +24,7 @@ REG_GOOD_PACKETS_L=$((BASE_ADDR +  3 * 4))
     REG_PCI_SIZE_L=$((BASE_ADDR +  9 * 4))
          REG_RESET=$((BASE_ADDR + 10 * 4))
 REG_CLEAR_COUNTERS=$((BASE_ADDR + 11 * 4))
+      REG_HBM_TEMP=$((BASE_ADDR + 12 * 4))
 
 # Transmit-related related registers
 REG_XMIT_SRCADDR_H=$((BASE_ADDR + 20 * 4));
@@ -288,3 +289,17 @@ xmit()
 
 }
 #==============================================================================
+
+
+
+
+#==============================================================================
+# Displays the HBM temperature in Celsius
+#==============================================================================
+hbm_temp()
+{
+    pcireg -dec $REG_HBM_TEMP
+}
+#==============================================================================
+
+

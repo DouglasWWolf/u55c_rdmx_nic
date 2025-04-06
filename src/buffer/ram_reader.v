@@ -11,7 +11,7 @@
     Reads RAM and writes the data to an output stream
 */
 
-module ram_reader # (parameter DW=512, IW=5, CHANNEL = 0)
+module ram_reader # (parameter DW=512, IW=5)
 (
     input   clk, resetn,
 

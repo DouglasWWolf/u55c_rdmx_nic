@@ -17,10 +17,10 @@ preplace port qsfp0_clk -pg 1 -lvl 0 -x 0 -y 280 -defaultsOSRD
 preplace port qsfp0_gt -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD -left
 preplace portBus hbm_cattrip -pg 1 -lvl 3 -x 760 -y 60 -defaultsOSRD
 preplace portBus qsfp0_leds -pg 1 -lvl 0 -x 0 -y 320 -defaultsOSRD -left
-preplace inst pcie_bridge -pg 1 -lvl 2 -x 590 -y 160 -swap {5 1 2 3 4 0 6 7 49 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 8 45 46 47 48 44 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 90 91 85 86 87 88 89} -defaultsOSRD -pinDir pcie_mgt right -pinY pcie_mgt 20R -pinDir pcie_refclk right -pinY pcie_refclk 0R -pinDir M_AXI_B left -pinY M_AXI_B 250L -pinDir AXIS_RDMX left -pinY AXIS_RDMX 0L -pinDir S_AXI_ABM left -pinY S_AXI_ABM 20L -pinDir axi_aclk left -pinY axi_aclk 370L -pinDir axi_aresetn left -pinY axi_aresetn 390L -pinDir resetn_in left -pinY resetn_in 270L -pinDir pci_range_err_strb left -pinY pci_range_err_strb 290L -pinDir pause_pci left -pinY pause_pci 310L -pinBusDir pci_base left -pinBusY pci_base 330L -pinBusDir pci_size left -pinBusY pci_size 350L
 preplace inst system_interconnect -pg 1 -lvl 1 -x 170 -y 410 -defaultsOSRD -pinDir S00_AXI right -pinY S00_AXI 0R -pinDir M01_AXI left -pinY M01_AXI 0L -pinDir aclk right -pinY aclk 20R -pinDir aresetn right -pinY aresetn 40R
 preplace inst zero -pg 1 -lvl 2 -x 590 -y 60 -defaultsOSRD -pinBusDir dout right -pinBusY dout 0R
 preplace inst channel_0 -pg 1 -lvl 1 -x 170 -y 160 -swap {0 1 2 3 4 64 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 5 65 66 67 68 74 75 71 70 69 72 73 76} -defaultsOSRD -pinDir axis_pcie_out right -pinY axis_pcie_out 0R -pinDir S_AXI left -pinY S_AXI 140L -pinDir SRC_AXI right -pinY SRC_AXI 20R -pinDir qsfp0_clk left -pinY qsfp0_clk 120L -pinDir qsfp0_gt left -pinY qsfp0_gt 100L -pinDir clk right -pinY clk 140R -pinDir resetn right -pinY resetn 160R -pinDir pause_pci right -pinY pause_pci 80R -pinDir pci_range_err_strb right -pinY pci_range_err_strb 60R -pinDir resetn_out right -pinY resetn_out 40R -pinBusDir pci_base right -pinBusY pci_base 100R -pinBusDir pci_size right -pinBusY pci_size 120R -pinBusDir qsfp0_leds left -pinBusY qsfp0_leds 160L
+preplace inst pcie0_bridge -pg 1 -lvl 2 -x 590 -y 160 -swap {5 1 2 3 4 0 6 7 49 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 8 45 46 47 48 44 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 92 93 87 88 89 90 91} -defaultsOSRD -pinDir pcie_mgt right -pinY pcie_mgt 20R -pinDir pcie_refclk right -pinY pcie_refclk 0R -pinDir M_AXI_B left -pinY M_AXI_B 250L -pinDir AXIS_RDMX left -pinY AXIS_RDMX 0L -pinDir S_AXI_ABM left -pinY S_AXI_ABM 20L -pinDir axi_aclk left -pinY axi_aclk 370L -pinDir axi_aresetn left -pinY axi_aresetn 390L -pinDir resetn_in left -pinY resetn_in 270L -pinDir pci_range_err_strb left -pinY pci_range_err_strb 290L -pinDir pause_pci left -pinY pause_pci 310L -pinBusDir pci_base left -pinBusY pci_base 330L -pinBusDir pci_size left -pinBusY pci_size 350L
 preplace netloc control_resetn_out1 1 1 1 440J 200n
 preplace netloc pause_pci_1 1 1 1 400J 240n
 preplace netloc pci_base_1 1 1 1 380J 260n
@@ -28,8 +28,8 @@ preplace netloc pci_size_1 1 1 1 360J 280n
 preplace netloc pcie_bridge_axi_aclk 1 1 1 340J 300n
 preplace netloc pcie_bridge_axi_aresetn 1 1 1 320J 320n
 preplace netloc pcie_bridge_pci_range_err_strb 1 1 1 420J 220n
-preplace netloc zero_dout 1 2 1 NJ 60
 preplace netloc qsfp_status_leds 1 0 1 N 320
+preplace netloc zero_dout 1 2 1 NJ 60
 preplace netloc AXIS_IN_1 1 1 1 NJ 160
 preplace netloc CLK_IN_D_0_1 1 2 1 N 160
 preplace netloc dma_abm_to_rdmx_SRC_AXI 1 1 1 NJ 180
@@ -41,8 +41,8 @@ preplace netloc system_interconnect_M01_AXI 1 0 1 20 300n
 levelinfo -pg 1 0 170 590 760
 pagesize -pg 1 -db -bbox -sgen -160 0 930 600
 ",
-   "No Loops_ScaleFactor":"1.0",
-   "No Loops_TopLeft":"-495,-134",
+   "No Loops_ScaleFactor":"0.946667",
+   "No Loops_TopLeft":"-245,0",
    "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
 preplace port S_AXI -pg 1 -lvl 0 -x -10 -y 50 -defaultsOSRD

@@ -11,47 +11,47 @@
    "No Loops_Layers":"/qsfp/pcie_bridge_axi_aresetn:true|/qsfp/ethernet/cmac_usplus_gt_txusrclk2:true|/qsfp/ethernet/cmac_control_reset_rx_datapath:true|/qsfp/ethernet/cmac_control_rx_resetn_out:true|",
    "No Loops_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
-preplace port axis_rx -pg 1 -lvl 5 -x 1160 -y 280 -defaultsOSRD
+preplace port axis_rx -pg 1 -lvl 5 -x 1120 -y 280 -defaultsOSRD
 preplace port gt_ref_clk -pg 1 -lvl 0 -x 0 -y 320 -defaultsOSRD
 preplace port gt_serial_port -pg 1 -lvl 0 -x 0 -y 280 -defaultsOSRD -left
-preplace port axis_loopback -pg 1 -lvl 5 -x 1160 -y 340 -defaultsOSRD -right
-preplace port axis_xmit -pg 1 -lvl 5 -x 1160 -y 510 -defaultsOSRD -right
+preplace port axis_loopback -pg 1 -lvl 5 -x 1120 -y 340 -defaultsOSRD -right
+preplace port axis_xmit -pg 1 -lvl 5 -x 1120 -y 490 -defaultsOSRD -right
 preplace port port-id_clk -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
-preplace port port-id_resetn -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
-preplace port port-id_gen_packets -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port port-id_resetn -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port port-id_gen_packets -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
 preplace port port-id_gen_idle -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD -left
 preplace port port-id_rx_aligned -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD -left
-preplace port port-id_loopback_mode -pg 1 -lvl 0 -x 0 -y 490 -defaultsOSRD
+preplace port port-id_loopback_mode -pg 1 -lvl 0 -x 0 -y 450 -defaultsOSRD
 preplace portBus max_packets -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
 preplace portBus status_leds -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD -left
-preplace inst ethernet -pg 1 -lvl 2 -x 400 -y 260 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 20 18 19} -defaultsOSRD -pinDir gt_serial_port left -pinY gt_serial_port 20L -pinDir gt_ref_clk left -pinY gt_ref_clk 60L -pinDir axis_rx right -pinY axis_rx 0R -pinDir axis_tx right -pinY axis_tx 160R -pinDir rx_aligned left -pinY rx_aligned 120L -pinDir sys_resetn_in left -pinY sys_resetn_in 80L -pinDir sys_clk left -pinY sys_clk 100L
-preplace inst repacketizer -pg 1 -lvl 4 -x 1010 -y 340 -defaultsOSRD -pinDir axis_monitor left -pinY axis_monitor 0L -pinDir axis_in right -pinY axis_in 0R -pinDir axis_out left -pinY axis_out 80L -pinDir clk left -pinY clk 100L -pinDir resetn left -pinY resetn 120L
-preplace inst output_mux -pg 1 -lvl 3 -x 700 -y 140 -defaultsOSRD -pinDir axis0 left -pinY axis0 0L -pinDir axis1 left -pinY axis1 120L -pinDir axis_out right -pinY axis_out 140R -pinDir clk left -pinY clk 140L
-preplace inst eth_tx_mux -pg 1 -lvl 3 -x 700 -y 420 -defaultsOSRD -pinDir axis_loop right -pinY axis_loop 0R -pinDir axis_out left -pinY axis_out 0L -pinDir axis_xmit right -pinY axis_xmit 90R -pinDir clk left -pinY clk 20L -pinDir port_select left -pinY port_select 70L
-preplace inst packet_gen -pg 1 -lvl 2 -x 400 -y 60 -swap {0 1 2 3 4 5 10 7 8 6 9} -defaultsOSRD -pinDir axis right -pinY axis 80R -pinDir clk left -pinY clk 80L -pinDir resetn left -pinY resetn 20L -pinDir start left -pinY start 40L -pinBusDir max_packets left -pinBusY max_packets 0L -pinDir idle left -pinY idle 60L
+preplace inst ethernet -pg 1 -lvl 2 -x 400 -y 260 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 20 18 19} -defaultsOSRD -pinDir gt_serial_port left -pinY gt_serial_port 20L -pinDir gt_ref_clk left -pinY gt_ref_clk 60L -pinDir axis_rx right -pinY axis_rx 0R -pinDir axis_tx right -pinY axis_tx 140R -pinDir rx_aligned left -pinY rx_aligned 120L -pinDir sys_resetn_in left -pinY sys_resetn_in 80L -pinDir sys_clk left -pinY sys_clk 100L
+preplace inst repacketizer -pg 1 -lvl 4 -x 970 -y 340 -defaultsOSRD -pinDir axis_monitor left -pinY axis_monitor 0L -pinDir axis_in right -pinY axis_in 0R -pinDir axis_out left -pinY axis_out 60L -pinDir clk left -pinY clk 80L -pinDir resetn left -pinY resetn 100L
+preplace inst output_mux -pg 1 -lvl 3 -x 680 -y 140 -defaultsOSRD -pinDir axis0 left -pinY axis0 0L -pinDir axis1 left -pinY axis1 120L -pinDir axis_out right -pinY axis_out 140R -pinDir clk left -pinY clk 140L
+preplace inst eth_tx_mux -pg 1 -lvl 3 -x 680 -y 400 -defaultsOSRD -pinDir axis_loop right -pinY axis_loop 0R -pinDir axis_out left -pinY axis_out 0L -pinDir axis_xmit right -pinY axis_xmit 90R -pinDir clk left -pinY clk 20L -pinDir port_select left -pinY port_select 50L
+preplace inst packet_gen -pg 1 -lvl 2 -x 400 -y 60 -swap {0 1 2 3 4 5 10 8 7 6 9} -defaultsOSRD -pinDir axis right -pinY axis 80R -pinDir clk left -pinY clk 80L -pinDir resetn left -pinY resetn 40L -pinDir start left -pinY start 20L -pinBusDir max_packets left -pinBusY max_packets 0L -pinDir idle left -pinY idle 60L
 preplace inst status_leds -pg 1 -lvl 1 -x 120 -y 200 -swap {1 0} -defaultsOSRD -pinDir link_up left -pinY link_up 20L -pinBusDir leds left -pinBusY leds 0L
 preplace netloc ethernet_rx_aligned 1 0 2 20 300 220J
 preplace netloc max_packets_1 1 0 2 NJ 60 N
 preplace netloc packet_gen_idle 1 0 2 NJ 120 N
-preplace netloc pcie_bridge_axi_aclk 1 0 4 NJ 140 260 200 540 340 860
-preplace netloc pcie_bridge_axi_aresetn 1 0 4 NJ 80 240 470 560J 360 840J
-preplace netloc port_select_1 1 0 3 NJ 490 NJ 490 NJ
-preplace netloc start_1 1 0 2 NJ 100 N
+preplace netloc pcie_bridge_axi_aclk 1 0 4 NJ 140 260 200 540 340 820
+preplace netloc pcie_bridge_axi_aresetn 1 0 4 NJ 100 240 550 NJ 550 840J
+preplace netloc port_select_1 1 0 3 NJ 450 NJ 450 NJ
+preplace netloc start_1 1 0 2 NJ 80 N
 preplace netloc status_leds_leds 1 0 1 N 200
 preplace netloc Conn1 1 0 2 NJ 320 NJ
 preplace netloc Conn2 1 0 2 NJ 280 N
-preplace netloc axis_mux_0_axis_out 1 3 2 880 280 NJ
+preplace netloc axis_mux_0_axis_out 1 3 2 840 280 NJ
 preplace netloc axis_tx_a_1 1 4 1 N 340
-preplace netloc eth_tx_mux_axis_out 1 2 1 NJ 420
+preplace netloc eth_tx_mux_axis_out 1 2 1 NJ 400
 preplace netloc ethernet_axis_rx 1 2 1 N 260
 preplace netloc packet_gen_axis 1 2 1 N 140
-preplace netloc repacketizer_axis_out 1 3 1 NJ 420
-preplace netloc tx_abm_1 1 3 2 NJ 510 NJ
-levelinfo -pg 1 0 120 400 700 1010 1160
-pagesize -pg 1 -db -bbox -sgen -190 0 1310 570
+preplace netloc repacketizer_axis_out 1 3 1 NJ 400
+preplace netloc tx_abm_1 1 3 2 NJ 490 NJ
+levelinfo -pg 1 0 120 400 680 970 1120
+pagesize -pg 1 -db -bbox -sgen -190 0 1270 560
 ",
    "No Loops_ScaleFactor":"1.0",
-   "No Loops_TopLeft":"-319,12",
+   "No Loops_TopLeft":"-339,-154",
    "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
 preplace port axis_out -pg 1 -lvl 3 -x 560 -y 250 -defaultsOSRD

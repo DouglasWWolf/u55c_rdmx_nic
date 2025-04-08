@@ -7,27 +7,31 @@
    "No Loops_ExpandedHierarchyInLayout":"",
    "No Loops_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
-preplace port S_AXIS -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
-preplace port M_AXIS -pg 1 -lvl 3 -x 530 -y 200 -defaultsOSRD
-preplace port port-id_sys_resetn_in -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
-preplace port port-id_sys_clk -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
-preplace port port-id_cmac_clk -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
-preplace port port-id_cmac_resetn -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
-preplace inst tx_cdc_fifo -pg 1 -lvl 1 -x 140 -y 60 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 0L -pinDir M_AXIS right -pinY M_AXIS 60R -pinDir s_axis_aresetn left -pinY s_axis_aresetn 20L -pinDir s_axis_aclk left -pinY s_axis_aclk 40L -pinDir m_axis_aclk left -pinY m_axis_aclk 60L
-preplace inst tx_ila -pg 1 -lvl 2 -x 390 -y 300 -defaultsOSRD -pinDir SLOT_0_AXIS right -pinY SLOT_0_AXIS 0R -pinDir clk left -pinY clk 0L -pinDir resetn left -pinY resetn 20L
-preplace inst packetizing_fifo -pg 1 -lvl 2 -x 390 -y 120 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 0L -pinDir M_AXIS right -pinY M_AXIS 80R -pinDir s_axis_aresetn left -pinY s_axis_aresetn 60L -pinDir s_axis_aclk left -pinY s_axis_aclk 80L
-preplace netloc cmac_control_rx_resetn_out 1 0 2 NJ 180 NJ
-preplace netloc cmac_usplus_gt_txusrclk2 1 0 2 20 200 260
-preplace netloc sys_clk_1 1 0 1 NJ 100
-preplace netloc sys_resetn_in_1 1 0 1 NJ 80
-preplace netloc axis_tx_1 1 0 1 NJ 60
-preplace netloc tx_cdc_fifo1_M_AXIS 1 2 1 510 200n
-preplace netloc tx_cdc_fifo_M_AXIS 1 1 1 N 120
-levelinfo -pg 1 0 140 390 530
-pagesize -pg 1 -db -bbox -sgen -150 0 640 380
+preplace port S_AXIS -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace port M_AXIS -pg 1 -lvl 5 -x 1040 -y 200 -defaultsOSRD
+preplace port port-id_sys_resetn_in -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace port port-id_sys_clk -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
+preplace port port-id_cmac_clk -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port port-id_cmac_resetn -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace inst tx_cdc_fifo -pg 1 -lvl 2 -x 400 -y 140 -swap {0 1 2 3 4 5 6 7 8 9 11 12 10} -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 20L -pinDir M_AXIS right -pinY M_AXIS 0R -pinDir s_axis_aresetn left -pinY s_axis_aresetn 60L -pinDir s_axis_aclk left -pinY s_axis_aclk 120L -pinDir m_axis_aclk left -pinY m_axis_aclk 40L
+preplace inst tx_ila -pg 1 -lvl 4 -x 910 -y 60 -defaultsOSRD -pinDir SLOT_0_AXIS left -pinY SLOT_0_AXIS 0L -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 40L
+preplace inst packetizing_fifo -pg 1 -lvl 3 -x 660 -y 140 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 0L -pinDir M_AXIS right -pinY M_AXIS 0R -pinDir s_axis_aresetn left -pinY s_axis_aresetn 20L -pinDir s_axis_aclk left -pinY s_axis_aclk 40L
+preplace inst axis_slice0 -pg 1 -lvl 1 -x 150 -y 160 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 0L -pinDir M_AXIS right -pinY M_AXIS 0R -pinDir aclk left -pinY aclk 20L -pinDir aresetn left -pinY aresetn 40L
+preplace inst axis_slice1 -pg 1 -lvl 4 -x 910 -y 200 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 0L -pinDir M_AXIS right -pinY M_AXIS 0R -pinDir aclk left -pinY aclk 20L -pinDir aresetn left -pinY aresetn 40L
+preplace netloc cmac_control_rx_resetn_out 1 0 4 NJ 60 NJ 60 520 240 NJ
+preplace netloc cmac_usplus_gt_txusrclk2 1 0 4 NJ 80 280 80 540 80 780
+preplace netloc sys_clk_1 1 0 2 20 260 NJ
+preplace netloc sys_resetn_in_1 1 0 2 40 100 260
+preplace netloc S_AXIS_1 1 0 1 NJ 160
+preplace netloc axis_register_slice_M_AXIS 1 1 1 N 160
+preplace netloc tx_cdc_fifo_M_AXIS 1 2 1 N 140
+preplace netloc packetizing_fifo_M_AXIS 1 3 1 800 60n
+preplace netloc axis_slice1_M_AXIS 1 4 1 N 200
+levelinfo -pg 1 0 150 400 660 910 1040
+pagesize -pg 1 -db -bbox -sgen -150 0 1150 320
 ",
    "No Loops_ScaleFactor":"1.0",
-   "No Loops_TopLeft":"-506,-168",
+   "No Loops_TopLeft":"-179,-125",
    "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
 preplace port S_AXIS -pg 1 -lvl 0 -x 0 -y 50 -defaultsOSRD

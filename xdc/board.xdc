@@ -83,16 +83,16 @@ set_property PACKAGE_PIN AD42 [get_ports "qsfp0_clk_clk_p"]
 #
 # HBM_0 Reference Clock, 100 Mhz
 #
-#set_property -dict {PACKAGE_PIN BK10  IOSTANDARD LVDS}  [get_ports hbm0_refclock_clk_p]
-#set_property -dict {PACKAGE_PIN BL10  IOSTANDARD LVDS}  [get_ports hbm0_refclock_clk_n]
-#create_clock -period 10.000 -name HBM0_REFCLK           [get_ports hbm0_refclock_clk_p]
+set_property -dict {PACKAGE_PIN BK10  IOSTANDARD LVDS}  [get_ports hbm0_refclk_clk_p]
+set_property -dict {PACKAGE_PIN BL10  IOSTANDARD LVDS}  [get_ports hbm0_refclk_clk_n]
+create_clock -period 10.000 -name HBM0_REFCLK           [get_ports hbm0_refclk_clk_p]
 
 
 
 #
 # HBM_1 Reference Clock, 100 Mhz
 #
-#set_property -dict {PACKAGE_PIN BK43  IOSTANDARD LVDS}  [get_ports hbm1_refclock_clk_p]
-#set_property -dict {PACKAGE_PIN BK44  IOSTANDARD LVDS}  [get_ports hbm1_refclock_clk_n]
-#create_clock -period 10.000 -name HBM1_REFCLK           [get_ports hbm1_refclock_clk_p]
+#set_property -dict {PACKAGE_PIN BK43  IOSTANDARD LVDS}  [get_ports hbm1_refclk_clk_p]
+#set_property -dict {PACKAGE_PIN BK44  IOSTANDARD LVDS}  [get_ports hbm1_refclk_clk_n]
+#create_clock -period 10.000 -name HBM1_REFCLK           [get_ports hbm1_refclk_clk_p]
 

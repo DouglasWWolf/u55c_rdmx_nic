@@ -13,7 +13,7 @@
 
 //`define DEBUG
 
-module stream_to_ram # (parameter DW=512, IW=5, CHANNEL = 0)
+module stream_to_ram # (parameter DW=512, IW=4, CHANNEL = 0)
 (
     `ifdef DEBUG
         output       dbg_new_inflow,

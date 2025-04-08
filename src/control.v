@@ -12,7 +12,7 @@
 */
 
 
-module control # (parameter AW=8)
+module control # (parameter AW=8, HBM_TEMPW=7)
 (
 
     (* X_INTERFACE_PARAMETER = "ASSOCIATED_RESET resetn:resetn_out" *)
@@ -37,7 +37,7 @@ module control # (parameter AW=8)
     input async_hbm_cattrip,
 
     // This is the temperature of the HBM RAM, in Celsius
-    input[5:0] async_hbm_temp,
+    input[HBM_TEMPW-1:0] async_hbm_temp,
 
     // This is a '1' if the QSFP port has acheived PCS alignment with the peer
     input async_pcs_aligned,
@@ -200,7 +200,7 @@ reg[31:0] pause_pci_counter;
 assign pause_pci = (pause_pci_counter != 0);
 
 // This is the temperature of the HBM RAM, in Celsius
-wire[5:0] hbm_temp;
+wire[HBM_TEMPW-1:0] hbm_temp;
 
 // If this is asserted, a catastrophic temperature failure has occured
 wire hbm_cattrip;
@@ -438,7 +438,7 @@ xpm_cdc_array_single #
 (
       .DEST_SYNC_FF(4),  
       .SRC_INPUT_REG(0), 
-      .WIDTH(6)          
+      .WIDTH(HBM_TEMPW)          
 )
 i_sync_hbm_temp
 (

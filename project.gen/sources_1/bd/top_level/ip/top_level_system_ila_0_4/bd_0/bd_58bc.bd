@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x6DDE81EF04C88471",
+      "boundary_crc": "0xCC974367D2E1332D",
       "design_src": "SBD",
       "device": "xcu55c-fsvh2892-2L-e",
       "name": "bd_58bc",
@@ -150,8 +150,8 @@
             "value_src": "default"
           },
           "ID_WIDTH": {
-            "value": "5",
-            "value_src": "default_prop"
+            "value": "6",
+            "value_src": "default"
           },
           "INSERT_VIP": {
             "value": "0",
@@ -361,7 +361,7 @@
             "value": "0"
           },
           "C_PROBE19_WIDTH": {
-            "value": "5"
+            "value": "6"
           },
           "C_PROBE1_TYPE": {
             "value": "0"
@@ -415,7 +415,7 @@
             "value": "0"
           },
           "C_PROBE27_WIDTH": {
-            "value": "5"
+            "value": "6"
           },
           "C_PROBE28_TYPE": {
             "value": "0"
@@ -445,7 +445,7 @@
             "value": "0"
           },
           "C_PROBE31_WIDTH": {
-            "value": "5"
+            "value": "6"
           },
           "C_PROBE32_TYPE": {
             "value": "0"
@@ -529,7 +529,7 @@
             "value": "0"
           },
           "C_PROBE8_WIDTH": {
-            "value": "5"
+            "value": "6"
           },
           "C_PROBE9_TYPE": {
             "value": "0"
@@ -624,7 +624,7 @@
             "value": "512"
           },
           "C_SLOT_1_AXI_ID_WIDTH": {
-            "value": "5"
+            "value": "6"
           },
           "C_SLOT_1_AXI_PROTOCOL": {
             "value": "AXI4"

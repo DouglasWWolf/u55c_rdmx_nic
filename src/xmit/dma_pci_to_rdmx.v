@@ -15,7 +15,7 @@
 */
 
 
-module dma_pci_to_rdmx # (parameter DW=512, parameter AW=64, UW=32)
+module dma_pci_to_rdmx # (parameter DW=512, AW=64, IW=5, UW=32)
 (
     input       clk, resetn,
     input[63:0] src_address,
@@ -31,7 +31,7 @@ module dma_pci_to_rdmx # (parameter DW=512, parameter AW=64, UW=32)
     output                                  SRC_AXI_AWVALID,
     output     [7:0]                        SRC_AXI_AWLEN,
     output     [2:0]                        SRC_AXI_AWSIZE,
-    output     [3:0]                        SRC_AXI_AWID,
+    output     [IW-1:0]                     SRC_AXI_AWID,
     output     [1:0]                        SRC_AXI_AWBURST,
     output                                  SRC_AXI_AWLOCK,
     output     [3:0]                        SRC_AXI_AWCACHE,
@@ -56,7 +56,7 @@ module dma_pci_to_rdmx # (parameter DW=512, parameter AW=64, UW=32)
     output                                  SRC_AXI_ARVALID,
     output     [2:0]                        SRC_AXI_ARPROT,
     output                                  SRC_AXI_ARLOCK,
-    output     [3:0]                        SRC_AXI_ARID,
+    output     [IW-1:0]                     SRC_AXI_ARID,
     output     [2:0]                        SRC_AXI_ARSIZE,
     output     [7:0]                        SRC_AXI_ARLEN,
     output     [1:0]                        SRC_AXI_ARBURST,
@@ -125,7 +125,7 @@ module dma_pci_to_rdmx # (parameter DW=512, parameter AW=64, UW=32)
 
 assign DST_AXI_AWUSER = 0;
 
-data_mover # (.DW(512), .AW(64)) i_data_mover
+data_mover # (.DW(512), .AW(64), .IW(IW)) i_data_mover
 (
     .clk             (clk),
     .resetn          (resetn),

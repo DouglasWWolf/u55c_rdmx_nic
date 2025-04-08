@@ -1192,11 +1192,11 @@
       <spirit:enumeration spirit:text="Yes">1</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
-      <spirit:name>choice_pairs_71c41210</spirit:name>
+      <spirit:name>choice_pairs_962b65a8</spirit:name>
       <spirit:enumeration spirit:text="Default">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Bypass">0</spirit:enumeration>
       <spirit:enumeration spirit:text="Fully-registered">8</spirit:enumeration>
       <spirit:enumeration spirit:text="Light-weight">7</spirit:enumeration>
-      <spirit:enumeration spirit:text="Bypass">0</spirit:enumeration>
       <spirit:enumeration spirit:text="SLR_Crossing">12</spirit:enumeration>
       <spirit:enumeration spirit:text="SLR_TDM_Crossing">13</spirit:enumeration>
       <spirit:enumeration spirit:text="Bypass-Endpoint">14</spirit:enumeration>
@@ -1259,7 +1259,7 @@
     <spirit:parameter>
       <spirit:name>REG_CONFIG</spirit:name>
       <spirit:displayName>Register Pipeline Type</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.REG_CONFIG" spirit:choiceRef="choice_pairs_71c41210" spirit:order="6">8</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.REG_CONFIG" spirit:choiceRef="choice_pairs_962b65a8" spirit:order="6">8</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>

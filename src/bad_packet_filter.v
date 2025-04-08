@@ -58,6 +58,9 @@ wire feop_in_tvalid = AXIS_IN_TVALID & AXIS_IN_TREADY & AXIS_IN_TLAST;
 // This is TVALID from the output side of the "end of packet" FIFO
 wire feop_out_tvalid;
 
+// Unused bits for TDATA.  This is just here to supress a Vivado warning
+wire[6:0] feop_out_unused;
+
 // This is the TREADY input to the output side of "end of packet" FIFO.  Every 
 // time this cycles high, it will cause the "end of packet" FIFO to advance to 
 // the next entry
@@ -155,7 +158,7 @@ eop_fifo
    .s_axis_tready(              ),
 
     // This FIFO outputs one entry per packet
-   .m_axis_tdata (AXIS_OUT_TUSER),
+   .m_axis_tdata ({feop_out_unused, AXIS_OUT_TUSER}),
    .m_axis_tvalid(feop_out_tvalid),
    .m_axis_tready(feop_out_tready),
 

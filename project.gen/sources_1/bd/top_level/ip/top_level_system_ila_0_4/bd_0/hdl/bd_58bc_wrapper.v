@@ -59,7 +59,7 @@ module bd_58bc_wrapper
   input [63:0]SLOT_1_AXI_araddr;
   input [1:0]SLOT_1_AXI_arburst;
   input [3:0]SLOT_1_AXI_arcache;
-  input [4:0]SLOT_1_AXI_arid;
+  input [5:0]SLOT_1_AXI_arid;
   input [7:0]SLOT_1_AXI_arlen;
   input [0:0]SLOT_1_AXI_arlock;
   input [2:0]SLOT_1_AXI_arprot;
@@ -71,7 +71,7 @@ module bd_58bc_wrapper
   input [63:0]SLOT_1_AXI_awaddr;
   input [1:0]SLOT_1_AXI_awburst;
   input [3:0]SLOT_1_AXI_awcache;
-  input [4:0]SLOT_1_AXI_awid;
+  input [5:0]SLOT_1_AXI_awid;
   input [7:0]SLOT_1_AXI_awlen;
   input [0:0]SLOT_1_AXI_awlock;
   input [2:0]SLOT_1_AXI_awprot;
@@ -80,12 +80,12 @@ module bd_58bc_wrapper
   input [3:0]SLOT_1_AXI_awregion;
   input [2:0]SLOT_1_AXI_awsize;
   input SLOT_1_AXI_awvalid;
-  input [4:0]SLOT_1_AXI_bid;
+  input [5:0]SLOT_1_AXI_bid;
   input SLOT_1_AXI_bready;
   input [1:0]SLOT_1_AXI_bresp;
   input SLOT_1_AXI_bvalid;
   input [511:0]SLOT_1_AXI_rdata;
-  input [4:0]SLOT_1_AXI_rid;
+  input [5:0]SLOT_1_AXI_rid;
   input SLOT_1_AXI_rlast;
   input SLOT_1_AXI_rready;
   input [1:0]SLOT_1_AXI_rresp;
@@ -105,7 +105,7 @@ module bd_58bc_wrapper
   wire [63:0]SLOT_1_AXI_araddr;
   wire [1:0]SLOT_1_AXI_arburst;
   wire [3:0]SLOT_1_AXI_arcache;
-  wire [4:0]SLOT_1_AXI_arid;
+  wire [5:0]SLOT_1_AXI_arid;
   wire [7:0]SLOT_1_AXI_arlen;
   wire [0:0]SLOT_1_AXI_arlock;
   wire [2:0]SLOT_1_AXI_arprot;
@@ -117,7 +117,7 @@ module bd_58bc_wrapper
   wire [63:0]SLOT_1_AXI_awaddr;
   wire [1:0]SLOT_1_AXI_awburst;
   wire [3:0]SLOT_1_AXI_awcache;
-  wire [4:0]SLOT_1_AXI_awid;
+  wire [5:0]SLOT_1_AXI_awid;
   wire [7:0]SLOT_1_AXI_awlen;
   wire [0:0]SLOT_1_AXI_awlock;
   wire [2:0]SLOT_1_AXI_awprot;
@@ -126,12 +126,12 @@ module bd_58bc_wrapper
   wire [3:0]SLOT_1_AXI_awregion;
   wire [2:0]SLOT_1_AXI_awsize;
   wire SLOT_1_AXI_awvalid;
-  wire [4:0]SLOT_1_AXI_bid;
+  wire [5:0]SLOT_1_AXI_bid;
   wire SLOT_1_AXI_bready;
   wire [1:0]SLOT_1_AXI_bresp;
   wire SLOT_1_AXI_bvalid;
   wire [511:0]SLOT_1_AXI_rdata;
-  wire [4:0]SLOT_1_AXI_rid;
+  wire [5:0]SLOT_1_AXI_rid;
   wire SLOT_1_AXI_rlast;
   wire SLOT_1_AXI_rready;
   wire [1:0]SLOT_1_AXI_rresp;

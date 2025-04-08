@@ -11,8 +11,17 @@
     Reads RAM and writes the data to an output stream
 */
 
-module ram_reader # (parameter DW=512, IW=5)
+//`define DEBUG
+
+module ram_reader # (parameter DW=512, IW=4)
 (
+
+    `ifdef DEBUG
+         output[31:0] dbg_total_cycles,
+         output[31:0] dbg_cycles_read,
+         output[ 1:0] dbg_fsm_state,
+    `endif
+
     input   clk, resetn,
 
     // The number of full blocks of data we should read from RAM
@@ -235,5 +244,12 @@ assign M_AXI_WLAST   = 0;
 
 assign M_AXI_BREADY  = 0;
 //=============================================================================
+
+
+`ifdef DEBUG
+    assign dbg_total_cycles = total_cycles;
+    assign dbg_cycles_read  = cycles_read;
+    assign dbg_fsm_state    = fsm_state;
+`endif
 
 endmodule

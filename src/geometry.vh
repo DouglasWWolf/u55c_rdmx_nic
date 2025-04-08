@@ -14,4 +14,4 @@ localparam BURST_BYTES = 32'h1000;
 localparam CYCLES_PER_RAM_BLOCK = BURST_BYTES / (DW/8);
 
 // Size of each RAM bank, in bytes
-localparam[63:0] RAM_SIZE = 64'h8_0000;
+localparam[63:0] RAM_SIZE = 64'h1_0000_0000;

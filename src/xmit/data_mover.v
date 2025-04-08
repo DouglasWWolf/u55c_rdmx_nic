@@ -20,7 +20,7 @@
 */
 
 
-module data_mover # (parameter DW = 512, parameter AW = 64)
+module data_mover # (parameter DW=512, AW=64, IW=4)
 (
     input       clk, resetn,
     input[63:0] src_address, dst_address, byte_count,
@@ -35,7 +35,7 @@ module data_mover # (parameter DW = 512, parameter AW = 64)
     output                                  SRC_AXI_AWVALID,
     output     [7:0]                        SRC_AXI_AWLEN,
     output     [2:0]                        SRC_AXI_AWSIZE,
-    output     [3:0]                        SRC_AXI_AWID,
+    output     [IW-1:0]                     SRC_AXI_AWID,
     output     [1:0]                        SRC_AXI_AWBURST,
     output                                  SRC_AXI_AWLOCK,
     output     [3:0]                        SRC_AXI_AWCACHE,
@@ -45,7 +45,7 @@ module data_mover # (parameter DW = 512, parameter AW = 64)
 
     // "Write Data"                         -- Master --    -- Slave --
     output     [DW-1:0]                     SRC_AXI_WDATA,
-    output     [(DW/8)-1:0]                 SRC_AXI_WSTRB,
+    output     [DW/8-1:0]                   SRC_AXI_WSTRB,
     output                                  SRC_AXI_WVALID,
     output                                  SRC_AXI_WLAST,
     input                                                   SRC_AXI_WREADY,
@@ -60,7 +60,7 @@ module data_mover # (parameter DW = 512, parameter AW = 64)
     output                                  SRC_AXI_ARVALID,
     output     [2:0]                        SRC_AXI_ARPROT,
     output                                  SRC_AXI_ARLOCK,
-    output     [3:0]                        SRC_AXI_ARID,
+    output     [IW-1:0]                     SRC_AXI_ARID,
     output     [2:0]                        SRC_AXI_ARSIZE,
     output     [7:0]                        SRC_AXI_ARLEN,
     output     [1:0]                        SRC_AXI_ARBURST,
